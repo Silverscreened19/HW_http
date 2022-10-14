@@ -8,4 +8,5 @@ def get_stack_q():
     return resp.json()
 
 
-pprint(get_stack_q())
+if __name__ == '__main__':
+    pprint(get_stack_q())

@@ -2,7 +2,7 @@ import requests
 
 
 def get_all():
-    url = 'https://akabab.github.io/supeчrhero-api/api/all.json'
+    url = 'https://akabab.github.io/superhero-api/api/all.json'
     resp = requests.get(url)
     all_list = resp.json()
     return all_list
@@ -20,8 +20,10 @@ def select_hero(list, name):
     return select_dict
 
 
-select_hero(get_all(), 'Hulk')
-select_hero(get_all(), 'Captain America')
-select_hero(get_all(), 'Thanos')
+if __name__ == '__main__':
+    select_hero(get_all(), 'Hulk')
+    select_hero(get_all(), 'Captain America')
+    select_hero(get_all(), 'Thanos')
 
-print(f'The smartest of them all is {max(select_dict, key=select_dict.get)}')
+    print(
+        f'The smartest of them all is {max(select_dict, key=select_dict.get)}')
